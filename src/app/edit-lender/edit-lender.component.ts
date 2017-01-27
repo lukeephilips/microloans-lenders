@@ -16,7 +16,6 @@ export class EditLenderComponent implements OnInit {
   ngOnInit() {
   }
   doneEditing(lenderInQuestion: Lender){
-    console.log(lenderInQuestion)
     this.lenderService.saveEdits(lenderInQuestion);
     this.lenderToEdit = null;
   }

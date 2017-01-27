@@ -13,19 +13,20 @@ import { Router } from '@angular/router';
 })
 export class LendersComponent implements OnInit {
   @Output() clickSender = new EventEmitter();
-  lenders: FirebaseListObservable<any>;
+  lenders: any;
   filterByLenderValue: string = "All"
   currentRoute:string = this.router.url;
-
 
   constructor(private router: Router, private lenderService: LenderService) { }
 
   ngOnInit() {
-    this.lenders = this.lenderService.getLenders();
+    this.lenderService.getLenders().subscribe(dataLastEmittedFromObserver => {
+      this.lenders = dataLastEmittedFromObserver;
+   });
+
     this.currentRoute = this.router.url
   }
   goToDetailPage(clickedLender: any){
-    // console.log(clickedLender.$key)
     this.router.navigate(['lenders', clickedLender.$key])
   }
   filterByLenderType(type){
@@ -37,6 +38,13 @@ export class LendersComponent implements OnInit {
   deleteLender(lender){
     if(confirm("For sure?")){
       this.lenderService.destroyLender(lender);
+    }
+  }
+  calcProjectsFunded(lender){
+    if (lender.portfolio){
+        return lender.portfolio.length;
+    } else {
+    return 0
     }
   }
 }

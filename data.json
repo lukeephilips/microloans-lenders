@@ -46,22 +46,33 @@
   }],
 "lenders": [{
     "name": "Bobby Bones",
-    "type": "individual",
+    "type": "Individual",
     "image": "https://res.cloudinary.com/paranoid-programmers/image/upload/v1466637647/big-lebowski-the-dude-smiling_dixucb.jpg",
     "accountBalance": 500,
-    "portfolio": [{"0":50},{"1":5}]
+    "portfolio": [["school",50],["new house",5]]
     },{
     "name": "Suzy Queue",
-    "type": "individual",
+    "type": "Individual",
     "image": "https://pbs.twimg.com/profile_images/2453889060/A-Queer-Chick1.jpeg",
     "accountBalance": 350,
-    "portfolio": [{"0":50},{"2":10}]
+    "portfolio": [["school",50],["sewing machine",10]]
   },{
-  "name": "Doom Capital",
-  "type": "corporate",
-  "image": "http://vignette4.wikia.nocookie.net/gadget/images/1/1d/DrClaw2.jpg/revision/latest?cb=20101017220506",
-  "accountBalance": 10000,
-  "portfolio": [{"3":100}]
-  }
-  ]
+    "name": "Doom Capital",
+    "type": "Corporate",
+    "image": "http://vignette4.wikia.nocookie.net/gadget/images/1/1d/DrClaw2.jpg/revision/latest?cb=20101017220506",
+    "accountBalance": 10000,
+    "portfolio": [["water project",400]]
+  },{
+    "accountBalance" : 200,
+    "image" : "http://chuckleberriesonline.com/wp-content/uploads/2013/03/buckethead.jpg",
+    "name" : "Jimmy Buckets",
+    "portfolio" : [],
+    "type" : "Individual"
+},{
+    "accountBalance" : 30,
+    "image" : "http://i.dailymail.co.uk/i/pix/2015/09/02/08/2BE5406100000578-3218820-image-m-25_1441179775589.jpg",
+    "name" : "Man Sized Lizard",
+    "portfolio" : [["lizard things", 2]],
+    "type" : "Individual"
+  }]
 }

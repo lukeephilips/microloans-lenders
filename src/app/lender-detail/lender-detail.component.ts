@@ -17,12 +17,19 @@ import { LenderService } from '../lender.service';
 export class LenderDetailComponent implements OnInit {
   lenderKey: any;
   lenderToDisplay;
+  portfolioItems: any[];
+
   constructor(private route: ActivatedRoute, private location: Location, private lenderService: LenderService, private router: Router) { }
 
   ngOnInit() {
-      this.route.params.forEach((urlParameters) =>{
-        this.lenderKey = urlParameters['key']
-        this.lenderToDisplay = this.lenderService.getLenderByKey(this.lenderKey);
-      });
-    }
+  this.route.params.forEach((urlParametersArray) => {
+   this.lenderKey = urlParametersArray['key'];
+ });
+ this.lenderService.getLenderByKey(this.lenderKey).subscribe(dataLastEmittedFromObserver => {
+
+   this.lenderToDisplay = dataLastEmittedFromObserver;
+   console.log(this.lenderToDisplay.portfolio)
+   this.portfolioItems = this.lenderToDisplay.portfolio;
+});
+}
 }

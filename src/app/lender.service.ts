@@ -11,7 +11,6 @@ export class LenderService {
     this.lenders = angularFire.database.list('lenders');
   }
   getLenders(){
-    console.log(this.lenders)
     return this.lenders;
   }
   getLenderByKey(lenderKey: string){
@@ -21,7 +20,6 @@ export class LenderService {
     this.lenders.push(lender);
   }
   saveEdits(localLender: any){
-    console.log(localLender);
     let fbaseLender = this.getLenderByKey(localLender.$key);
     fbaseLender.update(
       {name: localLender.name,

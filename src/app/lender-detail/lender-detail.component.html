@@ -1,21 +1,19 @@
-<div class="">
-  <h1>{{(lenderToDisplay | async)?.name}}</h1>
-</div>
-
 <div class="row">
         <div class="col s12 m7">
-          <div class="card">
+          <div class="card horizontal">
             <div class="card-image">
-              <img src="{{(lenderToDisplay | async)?.image}}">
-              <span class="card-title">{{(lenderToDisplay | async)?.name}}</span>
+              <img src="{{lenderToDisplay?.image}}">
+
             </div>
             <div class="card-content">
-              <h4>Lender Type: {{(lenderToDisplay | async)?.type}}</h4>
-              <p>Account Balance: ${{(lenderToDisplay | async)?.accountBalance}}</p>
-              <!-- <ul>
-                <span>{{(lenderToDisplay | async)?.portfolio}}</span>
-                <span *ngFor='let item of (lenderToDisplay | async)?.portfolio'>{{item}}</span>
-              </ul> -->
+              <h3 class="card-title">{{lenderToDisplay?.name}}</h3>
+              <p><em>Lender Type</em>: {{lenderToDisplay?.type}}</p>
+              <p><em>Account Balance</em>: ${{lenderToDisplay?.accountBalance}}</p><br>
+              <strong>Projects Funded</strong><br>
+                <div *ngFor='let item of portfolioItems'>
+                  <span>{{item[0]}}: ${{item[1]}}</span>
+
+                </div>
             </div>
             <!-- <div class="card-action">
               <a href="#">This is a link</a>

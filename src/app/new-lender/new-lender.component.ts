@@ -17,8 +17,6 @@ export class NewLenderComponent implements OnInit {
   submitForm(name: string, type:string, image:string, balance: string){
     var startingPortfolio: Object[] = [{"99":99}]
     let newLender: Lender = new Lender(name, type, image, parseInt(balance));
-
-    console.log(newLender)
     this.lenderService.createLender(newLender);
   }
 

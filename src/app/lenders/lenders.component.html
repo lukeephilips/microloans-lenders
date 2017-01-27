@@ -7,12 +7,12 @@
 </div>
 
 <ul class="collection">
-  <li class="collection-item avatar" *ngFor="let lender of lenders | async | lenderType: filterByLenderValue">
+  <li class="collection-item avatar" *ngFor="let lender of lenders | lenderType: filterByLenderValue">
     <img src={{lender.image}} alt="" class="circle" (click)="goToDetailPage(lender)">
     <span class="title">{{lender.name}}</span>
-    <p><span>{{lender.type}}</span> <br>
+    <p (click)="goToDetailPage(lender)"><span>{{lender.type}}</span> <br>
        <span>Balance: ${{lender.accountBalance}}</span> <br>
-       <span>Loans outstanding: {{lender.portfolio.length}}</span>
+       <span>Loans outstanding: {{calcProjectsFunded(lender)}}</span>
     </p>
     <a class="secondary-content"><i  (click)="goToDetailPage(lender)" class="material-icons">View Details</i><span *ngIf="currentRoute === '/lender-admin'"><br><i  (click)="selectLender(lender)" class="material-icons">Edit</i><br><i  (click)="deleteLender(lender)" class="material-icons">Delete</i></span></a>
 
