@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 })
 export class LendersComponent implements OnInit {
   lenders: FirebaseListObservable<any>;
+  filterByLenderValue: string = "All"
+
   constructor(private router: Router, private lenderService: LenderService) { }
 
   ngOnInit() {
@@ -21,5 +23,8 @@ export class LendersComponent implements OnInit {
   goToDetailPage(clickedLender: any){
     // console.log(clickedLender.$key)
     this.router.navigate(['lenders', clickedLender.$key])
+  }
+  filterByLenderType(type){
+    this.filterByLenderValue = type;
   }
 }

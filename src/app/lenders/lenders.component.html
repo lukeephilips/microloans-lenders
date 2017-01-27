@@ -1,6 +1,13 @@
+<div class="row">
+  <select class="select" (change)='filterByLenderType($event.target.value)'>
+    <option value="All" selected="selected">All</option>
+    <option value="Individual">Individual</option>
+    <option value="Corporate">Corporate</option>
+  </select>
+</div>
 
 <ul class="collection">
-  <li class="collection-item avatar" *ngFor="let lender of lenders | async">
+  <li class="collection-item avatar" *ngFor="let lender of lenders | async | lenderType: filterByLenderValue">
     <img src={{lender.image}} alt="" class="circle">
     <span class="title">{{lender.name}}</span>
     <p><span>{{lender.type}}</span> <br>

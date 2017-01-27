@@ -13,6 +13,7 @@ import { LendersComponent } from './lenders/lenders.component';
 import { LenderDetailComponent } from './lender-detail/lender-detail.component';
 import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
+import { LenderTypePipe } from './lender-type.pipe';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -28,6 +29,7 @@ export const firebaseConfig = {
     LenderDetailComponent,
     AboutComponent,
     AdminComponent,
+    LenderTypePipe,
   ],
   imports: [
     BrowserModule,
