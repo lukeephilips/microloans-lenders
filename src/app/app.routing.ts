@@ -4,6 +4,8 @@ import { LendersComponent } from './lenders/lenders.component';
 import { LenderDetailComponent } from './lender-detail/lender-detail.component';
 import { AboutComponent } from './about/about.component';
 import { NewLenderComponent } from './new-lender/new-lender.component';
+import { AdminComponent } from './admin/admin.component';
+
 
 
 
@@ -24,6 +26,10 @@ const appRoutes: Routes = [
   {
     path: 'new-lender',
     component: NewLenderComponent
+  },
+  {
+    path: 'lender-admin',
+    component: AdminComponent
   }
  ];
 
