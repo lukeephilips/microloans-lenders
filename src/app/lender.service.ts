@@ -30,4 +30,7 @@ export class LenderService {
   destroyLender(localLender: any){
     this.getLenderByKey(localLender.$key).remove();
   }
+  // fillOutYourForm(){
+  //   if()
+  // }
 }

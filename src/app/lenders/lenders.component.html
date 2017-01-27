@@ -14,7 +14,7 @@
        <span>Balance: ${{lender.accountBalance}}</span> <br>
        <span>Loans outstanding: {{calcProjectsFunded(lender)}}</span>
     </p>
-    <a class="secondary-content"><i  (click)="goToDetailPage(lender)" class="material-icons">View Details</i><span *ngIf="currentRoute === '/lender-admin'"><br><i  (click)="selectLender(lender)" class="material-icons">Edit</i><br><i  (click)="deleteLender(lender)" class="material-icons">Delete</i></span></a>
+    <a class="secondary-content"><span *ngIf="currentRoute === '/lender-admin'"><br><i  (click)="selectLender(lender)" class="material-icons">Edit</i><br><i  (click)="deleteLender(lender)" class="material-icons">Delete</i></span></a>
 
 
 
