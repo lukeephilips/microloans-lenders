@@ -29,4 +29,7 @@ export class LenderService {
       type: localLender.type,
       accountBalance: localLender.accountBalance})
   }
+  destroyLender(localLender: any){
+    this.getLenderByKey(localLender.$key).remove();
+  }
 }

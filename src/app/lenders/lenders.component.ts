@@ -32,6 +32,11 @@ export class LendersComponent implements OnInit {
     this.filterByLenderValue = type;
   }
   selectLender(lender){
-    this.clickSender.emit(lender);
+    this.clickSender.emit(lender,);
+  }
+  deleteLender(lender){
+    if(confirm("For sure?")){
+      this.lenderService.destroyLender(lender);
+    }
   }
 }
