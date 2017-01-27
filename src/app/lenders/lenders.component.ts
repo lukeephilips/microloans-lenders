@@ -3,7 +3,7 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Lender } from '../lender.model';
 import { LenderDetailComponent } from '../lender-detail/lender-detail.component';
 import { LenderService } from '../lender.service'
-// import { Router } from
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -13,13 +13,13 @@ import { LenderService } from '../lender.service'
 })
 export class LendersComponent implements OnInit {
   lenders: FirebaseListObservable<any>;
-  constructor(private lenderService: LenderService) { }
+  constructor(private router: Router, private lenderService: LenderService) { }
 
   ngOnInit() {
     this.lenders = this.lenderService.getLenders();
-    console.log(this.lenders);
   }
-  goToDetailPage(lender: Lender){
-
+  goToDetailPage(clickedLender: any){
+    // console.log(clickedLender.$key)
+    this.router.navigate(['lenders', clickedLender.$key])
   }
 }

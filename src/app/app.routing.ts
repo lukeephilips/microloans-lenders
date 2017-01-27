@@ -10,7 +10,7 @@ const appRoutes: Routes = [
     component: LendersComponent
   },
   {
-    path: 'lenders/:id',
+    path: 'lenders/:key',
     component: LenderDetailComponent
   }
  ];
