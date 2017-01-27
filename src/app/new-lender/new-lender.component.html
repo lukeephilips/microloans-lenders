@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <h3>Add New Lender</h3>
+    <div class="col s6">
+      <label>Name</label>
+      <input #newName required>
+
+      <label>Image URL</label>
+      <input #newImage required>
+      <label>Balance</label>
+      <input #newBalance type="number" required>
+    </div>
+    <div class="col s6">
+      <label>Lender Type</label>
+      <select #newType class="select drop-down input-field">
+        <option value="Individual">Individual</option>
+        <option value="Corporate">Corpoarate</option>
+      </select>
+    </div>
+
+  </div>
+  <button class="btn" (click)="submitForm(newName.value, newType.value, newImage.value, newBalance.value); newName.value = ''; newImage.value=''; newBalance.value=''">Add</button>
+</div>

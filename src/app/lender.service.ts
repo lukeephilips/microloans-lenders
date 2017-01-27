@@ -17,5 +17,8 @@ export class LenderService {
   getLenderByKey(lenderKey: string){
     return this.angularFire.database.object('lenders/' + lenderKey);
   }
+  createLender(lender: Lender){
+    this.lenders.push(lender);
+  }
 
 }
