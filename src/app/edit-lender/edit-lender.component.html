@@ -1,0 +1,23 @@
+<div class="container" *ngIf="lenderToEdit">
+  <div class="row">
+    <h3>Add New Lender</h3>
+    <div class="col s6">
+      <label>Name</label>
+      <input [(ngModel)]=lenderToEdit.name>
+
+      <label>Image URL</label>
+      <input [(ngModel)]=lenderToEdit.image>
+      <label>Balance</label>
+      <input [(ngModel)]=lenderToEdit.balance type="number">
+    </div>
+    <div class="col s6">
+      <label>Lender Type</label>
+      <select [(ngModel)]=lenderToEdit.type class="select drop-down input-field">
+        <option value="Individual">Individual</option>
+        <option value="Corporate">Corpoarate</option>
+      </select>
+    </div>
+
+  </div>
+  <button class="btn" (click)="doneEditing(lenderToEdit)">Done</button>
+</div>

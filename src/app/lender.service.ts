@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Lender } from './lender.model';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 
 
 @Injectable()
@@ -20,5 +20,13 @@ export class LenderService {
   createLender(lender: Lender){
     this.lenders.push(lender);
   }
-
+  saveEdits(localLender: any){
+    console.log(localLender);
+    let fbaseLender = this.getLenderByKey(localLender.$key);
+    fbaseLender.update(
+      {name: localLender.name,
+      image: localLender.image,
+      type: localLender.type,
+      accountBalance: localLender.accountBalance})
+  }
 }

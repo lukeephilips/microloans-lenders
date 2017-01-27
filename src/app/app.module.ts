@@ -15,6 +15,7 @@ import { AboutComponent } from './about/about.component';
 import { AdminComponent } from './admin/admin.component';
 import { LenderTypePipe } from './lender-type.pipe';
 import { NewLenderComponent } from './new-lender/new-lender.component';
+import { EditLenderComponent } from './edit-lender/edit-lender.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -32,6 +33,7 @@ export const firebaseConfig = {
     AdminComponent,
     LenderTypePipe,
     NewLenderComponent,
+    EditLenderComponent,
   ],
   imports: [
     BrowserModule,

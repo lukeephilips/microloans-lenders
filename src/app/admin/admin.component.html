@@ -1,3 +1,7 @@
-<p>
-  admin works!
-</p>
+<div *ngIf="ShowNewLenderForm">
+  <app-new-lender></app-new-lender>
+</div>
+<div *ngIf="lenderToEdit">
+  <app-edit-lender [lenderToEdit]="lenderToEdit"></app-edit-lender>
+</div>
+<app-lenders (clickSender)='selectLenderToEdit($event)'></app-lenders>
