@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { Lender } from '../lender.model';
+import { LenderDetailComponent } from '../lender-detail/lender-detail.component';
 import { LenderService } from '../lender.service'
 // import { Router } from
 
@@ -17,5 +18,8 @@ export class LendersComponent implements OnInit {
   ngOnInit() {
     this.lenders = this.lenderService.getLenders();
     console.log(this.lenders);
+  }
+  goToDetailPage(lender: Lender){
+
   }
 }

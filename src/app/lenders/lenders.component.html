@@ -7,6 +7,6 @@
        <span>Balance: ${{lender.accountBalance}}</span> <br>
        <span>Loans outstanding: {{lender.portfolio.length}}</span>
     </p>
-    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+    <a (click)="goToDetailPage(lender)" class="secondary-content"><i class="material-icons">View Details</i></a>
   </li>
 <ul>
