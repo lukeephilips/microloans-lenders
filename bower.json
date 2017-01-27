@@ -1,0 +1,20 @@
+{
+  "name": "microloan-lenders",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Luke Philips <luke.e.philips@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.98.0"
+  }
+}
