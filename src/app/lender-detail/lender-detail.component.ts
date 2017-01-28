@@ -28,7 +28,6 @@ export class LenderDetailComponent implements OnInit {
  this.lenderService.getLenderByKey(this.lenderKey).subscribe(dataLastEmittedFromObserver => {
 
    this.lenderToDisplay = dataLastEmittedFromObserver;
-   console.log(this.lenderToDisplay.portfolio)
    this.portfolioItems = this.lenderToDisplay.portfolio;
 });
 }
