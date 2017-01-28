@@ -12,8 +12,8 @@
               <strong>Projects Funded</strong><br>
                 <div *ngFor='let item of portfolioItems'>
                   <span>{{item[0]}}: ${{item[1]}}</span>
-
                 </div>
+                <span *ngIf="!item">None yet</span>
             </div>
             <!-- <div class="card-action">
               <a href="#">This is a link</a>
